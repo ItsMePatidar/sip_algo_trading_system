@@ -1,0 +1,15 @@
+flask
+flask-cors
+plotly
+schedule
+pg8000
+scikit-learn
+statsmodels
+tensorflow
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+yfinance
+ta

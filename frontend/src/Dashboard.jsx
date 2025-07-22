@@ -41,7 +41,7 @@ function Dashboard() {
   const fetchCategory = async (cat) => {
     setLoading(true);
     try {
-      const res = await fetch('/api/symbols/categories');
+      const res = await fetch('https://sip-algo-trading-system.onrender.com/api/symbols/categories');
       const data = await res.json();
       setSymbols(data.categories[cat] || []);
       setLoading(false);
@@ -54,7 +54,7 @@ function Dashboard() {
   const searchSymbols = async (query) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/symbols/search?q=${query}&limit=10`);
+      const res = await fetch(`https://sip-algo-trading-system.onrender.com/api/symbols/search?q=${query}&limit=10`);
       const data = await res.json();
       setSymbols(data.symbols || []);
       setLoading(false);
@@ -66,7 +66,7 @@ function Dashboard() {
 
   const fetchPriceData = async (symbol, period = selectedTimeWindow) => {
     try {
-      const priceRes = await fetch(`/api/price_data/${symbol}?period=${period}`);
+      const priceRes = await fetch(`https://sip-algo-trading-system.onrender.com/api/price_data/${symbol}?period=${period}`);
       const priceData = await priceRes.json();
       setPriceData(priceData);
     } catch (e) {
@@ -87,10 +87,10 @@ function Dashboard() {
     );
     try {
       // Fetch ML pipeline result only when a symbol is selected
-      const mlRes = await fetch(`/api/ml_pipeline_result?symbol=${symbol}`);
+      const mlRes = await fetch(`https://sip-algo-trading-system.onrender.com/api/ml_pipeline_result?symbol=${symbol}`);
       const mlData = await mlRes.json();
       setMlPipelineResult(mlData);
-      const analysisRes = await fetch(`/api/analysis/${symbol}?forecast_days=7`);
+      const analysisRes = await fetch(`https://sip-algo-trading-system.onrender.com/api/analysis/${symbol}?forecast_days=7`);
       const analysisData = await analysisRes.json();
       if (analysisRes.ok) {
         setAnalysis(analysisData);
@@ -115,7 +115,7 @@ function Dashboard() {
     }
     setLoading(true);
     try {
-      const res = await fetch('/api/portfolio/compare', {
+      const res = await fetch('https://sip-algo-trading-system.onrender.com/api/portfolio/compare', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ symbols: selectedSymbols, period: '1y' }),

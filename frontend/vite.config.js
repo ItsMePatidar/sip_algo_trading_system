@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://sip-algo-trading-system.vercel.app',
+      '/api': 'https://sip-algo-trading-system.onrender.com',
     },
   },
 })

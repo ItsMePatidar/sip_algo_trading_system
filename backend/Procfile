@@ -1,0 +1,1 @@
+web: gunicorn yfinance_ml_system:app

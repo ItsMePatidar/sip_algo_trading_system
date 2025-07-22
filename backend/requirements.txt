@@ -13,3 +13,4 @@ matplotlib
 seaborn
 yfinance
 ta
+dotenv

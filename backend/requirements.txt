@@ -5,7 +5,7 @@ schedule
 pg8000
 scikit-learn
 statsmodels
-tensorflow
+tensorflow==2.19.0
 pandas
 numpy
 scipy

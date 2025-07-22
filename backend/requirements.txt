@@ -14,3 +14,4 @@ seaborn
 yfinance
 ta
 dotenv
+sqlalchemy
